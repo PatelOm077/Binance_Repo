@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Binance Testnet Bot</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0b0e11;
+      color: #eaecef;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .card {
+      background: #1e2329;
+      border: 1px solid #2b3139;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .card-header .dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #f0b90b;
+    }
+
+    h1 { font-size: 1.2rem; font-weight: 600; color: #f0b90b; }
+    .subtitle { font-size: 0.78rem; color: #848e9c; margin-top: 2px; }
+
+    label {
+      display: block;
+      font-size: 0.78rem;
+      color: #848e9c;
+      margin-bottom: 0.35rem;
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    input, select {
+      width: 100%;
+      background: #2b3139;
+      border: 1px solid #363c45;
+      border-radius: 6px;
+      color: #eaecef;
+      font-size: 0.95rem;
+      padding: 0.6rem 0.85rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus { border-color: #f0b90b; }
+    select option { background: #2b3139; }
+
+    .row { display: flex; gap: 1rem; }
+    .row > div { flex: 1; }
+
+    #price-group { transition: opacity 0.2s; }
+    #price-group.hidden { opacity: 0.3; pointer-events: none; }
+
+    .btn {
+      margin-top: 1.75rem;
+      width: 100%;
+      padding: 0.75rem;
+      background: #f0b90b;
+      color: #0b0e11;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover { background: #d4a309; }
+
+    /* Result box */
+    .result {
+      margin-top: 1.5rem;
+      background: #12161c;
+      border: 1px solid #2ebd85;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+    .result-title {
+      font-size: 0.8rem;
+      color: #2ebd85;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .result-title::before { content: "✓"; font-size: 1rem; }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem 1.5rem;
+    }
+    .result-item .key {
+      font-size: 0.72rem;
+      color: #848e9c;
+      text-transform: uppercase;
+    }
+    .result-item .val {
+      font-size: 0.95rem;
+      color: #eaecef;
+      font-weight: 600;
+      margin-top: 1px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .badge.BUY  { background: #0d2b1e; color: #2ebd85; }
+    .badge.SELL { background: #2b0d0d; color: #f6465d; }
+    .badge.FILLED { background: #1a2b1a; color: #2ebd85; }
+    .badge.NEW    { background: #1a2020; color: #f0b90b; }
+
+    /* Error box */
+    .error {
+      margin-top: 1.5rem;
+      background: #1e1215;
+      border: 1px solid #f6465d;
+      border-radius: 8px;
+      padding: 0.9rem 1.25rem;
+      font-size: 0.9rem;
+      color: #f6465d;
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .error::before { content: "✕"; font-weight: 700; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div class="dot"></div>
+      <div>
+        <h1>Binance Testnet Bot</h1>
+        <div class="subtitle">USD-M Futures · Testnet</div>
+      </div>
+    </div>
+
+    <form method="POST" action="/order">
+
+      <label for="symbol">Symbol</label>
+      <select name="symbol" id="symbol">
+        <option value="BTCUSDT">BTCUSDT</option>
+        <option value="ETHUSDT">ETHUSDT</option>
+        <option value="BNBUSDT">BNBUSDT</option>
+      </select>
+
+      <div class="row">
+        <div>
+          <label for="side">Side</label>
+          <select name="side" id="side">
+            <option value="BUY">BUY</option>
+            <option value="SELL">SELL</option>
+          </select>
+        </div>
+        <div>
+          <label for="type">Order Type</label>
+          <select name="type" id="type" onchange="togglePrice()">
+            <option value="MARKET">MARKET</option>
+            <option value="LIMIT">LIMIT</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="qty">Quantity</label>
+      <input type="number" name="qty" id="qty" step="any" min="0"
+             placeholder="e.g. 0.001" required />
+
+      <div id="price-group" class="hidden">
+        <label for="price">Limit Price (USDT)</label>
+        <input type="number" name="price" id="price" step="any" min="0"
+               placeholder="e.g. 30000" />
+      </div>
+
+      <button type="submit" class="btn">Place Order</button>
+    </form>
+
+    {% if error %}
+    <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if result %}
+    <div class="result">
+      <div class="result-title">Order Placed</div>
+      <div class="result-grid">
+        <div class="result-item">
+          <div class="key">Order ID</div>
+          <div class="val">{{ result.order_id }}</div>
+        </div>
+        <div class="result-item">
+          <div class="key">Status</div>
+          <div class="val">
+            <span class="badge {{ result.status }}">{{ result.status }}</span>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="key">Symbol</div>
+          <div class="val">{{ result.symbol }}</div>
+        </div>
+        <div class="result-item">
+          <div class="key">Side</div>
+          <div class="val">
+            <span class="badge {{ result.side }}">{{ result.side }}</span>
+          </div>
+        </div>
+        <div class="result-item">
+          <div class="key">Executed Qty</div>
+          <div class="val">{{ result.executed_qty }}</div>
+        </div>
+        <div class="result-item">
+          <div class="key">Avg Price</div>
+          <div class="val">{{ result.avg_price }}</div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+  <script>
+    function togglePrice() {
+      const type = document.getElementById("type").value;
+      const pg   = document.getElementById("price-group");
+      const inp  = document.getElementById("price");
+      if (type === "LIMIT") {
+        pg.classList.remove("hidden");
+        inp.required = true;
+      } else {
+        pg.classList.add("hidden");
+        inp.required = false;
+        inp.value = "";
+      }
+    }
+  </script>
+</body>
+</html>

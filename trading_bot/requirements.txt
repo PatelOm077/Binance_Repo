@@ -1,0 +1,6 @@
+binance-futures-connector
+python-dotenv
+fastapi
+uvicorn[standard]
+python-multipart
+jinja2

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MediCore — Hospital Management SaaS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2563EB"/><path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+        <span>MediCore</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-ghost">Log in</a>
+        <a href="login.html" class="btn btn-primary">Get Started Free</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="badge">Trusted by 500+ hospitals worldwide</div>
+      <h1>The all-in-one platform for<br/><span class="gradient-text">modern hospital management</span></h1>
+      <p class="hero-sub">Streamline patient records, appointments, billing, and staff scheduling — all in one secure, HIPAA-compliant platform.</p>
+      <div class="hero-cta">
+        <a href="login.html" class="btn btn-primary btn-lg">Start 14-day free trial</a>
+        <a href="#features" class="btn btn-outline btn-lg">See how it works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">98%</span><span class="stat-label">Uptime SLA</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Hospitals</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">2M+</span><span class="stat-label">Patient Records</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">HIPAA</span><span class="stat-label">Compliant</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="dashboard-mock">
+        <div class="mock-bar">
+          <span class="mock-dot red"></span>
+          <span class="mock-dot yellow"></span>
+          <span class="mock-dot green"></span>
+          <span class="mock-title">MediCore Dashboard</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-sidebar">
+            <div class="mock-menu-item active">Dashboard</div>
+            <div class="mock-menu-item">Patients</div>
+            <div class="mock-menu-item">Appointments</div>
+            <div class="mock-menu-item">Billing</div>
+            <div class="mock-menu-item">Staff</div>
+            <div class="mock-menu-item">Reports</div>
+          </div>
+          <div class="mock-main">
+            <div class="mock-cards">
+              <div class="mock-card blue"><div class="mock-card-num">248</div><div class="mock-card-lbl">Patients Today</div></div>
+              <div class="mock-card green"><div class="mock-card-num">34</div><div class="mock-card-lbl">Available Beds</div></div>
+              <div class="mock-card purple"><div class="mock-card-num">$84k</div><div class="mock-card-lbl">Monthly Revenue</div></div>
+            </div>
+            <div class="mock-chart">
+              <div class="mock-chart-label">Weekly Admissions</div>
+              <div class="mock-bars">
+                <div class="mock-bar-item" style="height:40%"></div>
+                <div class="mock-bar-item" style="height:65%"></div>
+                <div class="mock-bar-item" style="height:50%"></div>
+                <div class="mock-bar-item" style="height:80%"></div>
+                <div class="mock-bar-item" style="height:60%"></div>
+                <div class="mock-bar-item" style="height:90%"></div>
+                <div class="mock-bar-item" style="height:70%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section class="logos-section">
+    <div class="container">
+      <p class="logos-label">Trusted by leading healthcare institutions</p>
+      <div class="logos-row">
+        <div class="logo-pill">Apollo Hospitals</div>
+        <div class="logo-pill">City Medical Center</div>
+        <div class="logo-pill">HealthFirst Network</div>
+        <div class="logo-pill">MedPlus Group</div>
+        <div class="logo-pill">CarePoint Systems</div>
+        <div class="logo-pill">NovaCare Health</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Features</div>
+        <h2>Everything your hospital needs</h2>
+        <p>From patient intake to discharge, MediCore covers every workflow so your team can focus on care.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Patient Records (EHR)</h3>
+          <p>Centralized electronic health records with real-time updates, history tracking, and secure sharing across departments.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#16A34A" stroke-width="2"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#16A34A" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Appointment Scheduling</h3>
+          <p>Smart scheduling engine with conflict detection, automated reminders via SMS & email, and patient self-booking portal.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon purple">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#7C3AED"/></svg>
+          </div>
+          <h3>Billing & Insurance</h3>
+          <p>Automated invoicing, insurance claim submission, co-pay tracking, and full financial reporting dashboard.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon orange">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" stroke="#EA580C" stroke-width="2"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" stroke="#EA580C" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Staff Management</h3>
+          <p>Shift scheduling, role-based access control, performance tracking, and payroll integration for all hospital staff.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon teal">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M3 3h18v4H3zM3 10h18v4H3zM3 17h18v4H3z" stroke="#0D9488" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Bed Management</h3>
+          <p>Real-time bed availability tracking, ward assignment, discharge planning, and capacity forecasting.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon red">
+            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#DC2626" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Analytics & Reports</h3>
+          <p>Customizable dashboards, KPI tracking, revenue analytics, and automated compliance reports for audits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">How It Works</div>
+        <h2>Up and running in minutes</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Create your account</h3>
+          <p>Sign up in seconds. No credit card required for the 14-day trial.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Import your data</h3>
+          <p>Migrate existing patient records and staff data with our guided import wizard.</p>
+        </div>
+        <div class="step-arrow">→</div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Go live</h3>
+          <p>Train your team with in-app tutorials and go live with dedicated onboarding support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Pricing</div>
+        <h2>Simple, transparent pricing</h2>
+        <p>No hidden fees. Scale up or down as your hospital grows.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="plan-name">Starter</div>
+          <div class="plan-price"><span class="price-num">$99</span><span class="price-per">/mo</span></div>
+          <div class="plan-desc">Perfect for small clinics & outpatient centers</div>
+          <ul class="plan-features">
+            <li>Up to 5 doctors</li>
+            <li>1,000 patient records</li>
+            <li>Appointment scheduling</li>
+            <li>Basic billing</li>
+            <li>Email support</li>
+          </ul>
+          <a href="login.html" class="btn btn-outline full-width">Get Started</a>
+        </div>
+        <div class="pricing-card featured">
+          <div class="plan-badge">Most Popular</div>
+          <div class="plan-name">Professional</div>
+          <div class="plan-price"><span class="price-num">$299</span><span class="price-per">/mo</span></div>
+          <div class="plan-desc">For mid-size hospitals with advanced needs</div>
+          <ul class="plan-features">
+            <li>Up to 50 doctors</li>
+            <li>Unlimited patient records</li>
+            <li>Full EHR + billing</li>
+            <li>Staff management</li>
+            <li>Analytics dashboard</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="login.html" class="btn btn-primary full-width">Get Started</a>
+        </div>
+        <div class="pricing-card">
+          <div class="plan-name">Enterprise</div>
+          <div class="plan-price"><span class="price-num">Custom</span></div>
+          <div class="plan-desc">For large hospital networks & health systems</div>
+          <ul class="plan-features">
+            <li>Unlimited doctors & staff</li>
+            <li>Multi-branch management</li>
+            <li>Custom integrations</li>
+            <li>Dedicated account manager</li>
+            <li>SLA guarantee</li>
+            <li>On-premise option</li>
+          </ul>
+          <a href="#" class="btn btn-outline full-width">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge">Testimonials</div>
+        <h2>Loved by healthcare professionals</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"MediCore reduced our patient wait times by 40%. The scheduling module alone paid for itself in the first month."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar blue">DR</div>
+            <div><strong>Dr. Riya Patel</strong><br/><small>Chief Medical Officer, Apollo Multispeciality</small></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Billing used to take our team 3 days per week. Now it's fully automated and our insurance claim rejection rate dropped to under 2%."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar green">SM</div>
+            <div><strong>Sarah Mitchell</strong><br/><small>CFO, City Medical Center</small></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The onboarding was seamless. Within a week all 200 of our staff were trained and using the system daily."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar purple">JK</div>
+            <div><strong>James Kumar</strong><br/><small>Hospital Administrator, HealthFirst</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container faq-inner">
+      <div class="section-header">
+        <div class="badge">FAQ</div>
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Is MediCore HIPAA compliant? <span class="faq-arrow">+</span></button>
+          <div class="faq-answer">Yes. MediCore is fully HIPAA compliant with end-to-end encryption, audit logs, and signed BAA agreements for all plans.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Can I migrate data from my existing HMS? <span class="faq-arrow">+</span></button>
+          <div class="faq-answer">Absolutely. We support imports from all major HMS providers including Oracle Health, Epic, and Meditech. Our migration team will assist you at no extra cost.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">How long does setup take? <span class="faq-arrow">+</span></button>
+          <div class="faq-answer">Most hospitals are fully live within 1–2 weeks. Small clinics can be operational in under 24 hours using our quick-start templates.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">Do you offer an on-premise deployment? <span class="faq-arrow">+</span></button>
+          <div class="faq-answer">Yes, on-premise deployment is available on our Enterprise plan. Contact our sales team for details.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">What kind of support do you provide? <span class="faq-arrow">+</span></button>
+          <div class="faq-answer">All plans include email support. Professional and Enterprise plans include 24/7 phone support, dedicated onboarding, and a customer success manager.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container cta-inner">
+      <h2>Ready to modernize your hospital?</h2>
+      <p>Join 500+ healthcare institutions already using MediCore. Start your free 14-day trial today — no credit card required.</p>
+      <a href="login.html" class="btn btn-white btn-lg">Get Started Free</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#2563EB"/><path d="M16 8v16M8 16h16" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+          <span>MediCore</span>
+        </a>
+        <p>The modern hospital management platform built for healthcare teams.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#">Changelog</a>
+          <a href="#">Roadmap</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">HIPAA Compliance</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 MediCore Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('mobile-open');
+    });
+  </script>
+</body>
+</html>
